@@ -8,7 +8,7 @@ import { TelegramModule } from './telegram/telegram.module';
 import { UploadModule } from './upload/upload.module';
 import { ContactModule } from './contact/contact.module';
 import { MaterialModule } from './material/material.module';
-
+import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     ProductModule,
@@ -17,6 +17,7 @@ import { MaterialModule } from './material/material.module';
     UploadModule,
     ContactModule,
     MaterialModule,
+    ConfigModule.forRoot({ isGlobal: true, envFilePath: '.env' }),
   ],
   controllers: [AppController],
   providers: [AppService, PrismaService],
