@@ -7,6 +7,7 @@ import {
   Delete,
   Put,
   Query,
+  Patch,
 } from '@nestjs/common';
 import { CreateProductDto } from './dto/create-product.dto';
 import { ApiTags, ApiOperation, ApiResponse } from '@nestjs/swagger';
@@ -40,7 +41,7 @@ export class ProductController {
     return this.productsService.findOne(id);
   }
 
-  @Put(':id')
+  @Patch(':id')
   @ApiOperation({ summary: 'Mahsulotni yangilash' })
   update(@Param('id') id: string, @Body() updateProductDto: CreateProductDto) {
     return this.productsService.update(id, updateProductDto);
