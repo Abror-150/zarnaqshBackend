@@ -52,7 +52,7 @@ export class ProductService {
   }
 
   async findOne(id: string) {
-    return this.prisma.product.findUnique({
+    return this.prisma.product.findFirst({
       where: { id },
     });
   }
