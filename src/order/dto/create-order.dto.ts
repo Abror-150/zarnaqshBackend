@@ -72,15 +72,6 @@ export class CreateOrderDto {
   oferta: boolean;
 
   @ApiProperty({
-    example: 250000,
-    description: 'Buyurtma umumiy narxi (so‘mda)',
-  })
-  @IsOptional()
-  @IsInt()
-  @Min(0)
-  totalPrice?: number;
-
-  @ApiProperty({
     type: [OrderItemDto],
     description: 'Buyurtma ichidagi mahsulotlar ro‘yxati',
     example: [

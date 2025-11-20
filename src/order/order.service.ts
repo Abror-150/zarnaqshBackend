@@ -78,7 +78,7 @@ export class OrderService {
 
   async findAll() {
     return this.prisma.order.findMany({
-      include: { OrderItem: { include: { Product: true } } },
+      include: { OrderItem: true },
     });
   }
 
